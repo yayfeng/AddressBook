@@ -1,0 +1,16 @@
+编AddressBook思路：
+1. 建立AB中数据项，用CLASS AddressEntry表示，包括NAME,NUMBER,ADDRESS。提供2种构造函数，一是默认构造函数，初始化为空。另一个分别对这三个属性赋初值。
+2. 建立用来存储AB的链表类。CLASS AddressList链表中应该包含以下操作：（1）AddEntry操作，每次往链表的末尾插入输入值。（2）搜索操作，分别可以依据name,number,address三个字段进行查询。函数原型为：vector<addressEntry> SearchEntryName(string nm,vector<addressEntry> &searchResult,int flag); 
+vector<addressEntry> SearchEntryNumber(string nb,vector<addressEntry> &searchResult,int flag);   
+vector<addressEntry> SearchEntryAddress(string ad,vector<addressEntry> &searchResult,int flag);    
+（3）删除操作，可以依据name,number,address三个字段进行删除操作，函数原型是：    
+ int DeleEntryName(string nm,int flag);   
+int DeleEntryNumber(string nb,int flag);                                            
+int DeleEntryAddress(string ad,int flag);   
+（4）是否为空链,  bool IsEmpty(); (5)程序退出时，把数据存入文件中，void StoreData(); 存的路径是D:/AddressBook
+3. 对用户输入的命令进行分析，用CLASS CmdHandle表示。可以分别对ADD,SEARCH,DELETE,!HELP,!QUIT命令进行处理，函数原型是：
+void AddHandle();
+void SearchHandle();
+void DeleteHandle();
+void HelpHandle();
+void QuitHandle();                                            
